@@ -19,8 +19,8 @@ function initGame() {
   resetHistoryContent();
 }
 
-function resetResultContent() {
-  document.getElementById("history").innerHTML = "";
+function resetHistoryContent() {
+  document.getElementById("result").innerHTML = "";
 }
 
 function resetResultContent() {
