@@ -24,6 +24,21 @@ function displayResult(numberGuess) {
   }
 }
 
+function getDialog(dialogType, text) {
+    let dialog;
+    switch (dialogType) {
+      case "warning":
+        dialog = "<div class='alert alert-warning' role='alert'>";
+        break;
+      case "won":
+        dialog = "<div class='alert alert-success' role='alert'>";
+        break;
+    }
+    dialog += text;
+    dialog += "</div>";
+    return dialog;
+  }
+
 function showYouWon() {
   const text = "Awesome job, you got it!";
   let dialog = getDialog("won", text);
