@@ -11,10 +11,13 @@ let getRandomNumber = () => {
 
 let correctNumber = getRandomNumber();
 
+function initGame() {}
+
 function playGame() {
   let numberGuess = document.getElementById("number-guess").value;
   displayResult(numberGuess);
   saveGuessHistory(numberGuess);
+  displayHistory();
 }
 
 function displayResult(numberGuess) {
