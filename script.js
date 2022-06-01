@@ -1,3 +1,5 @@
+let guesses = [];
+
 window.onload = function () {
   document.getElementById("number-submit").addEventListener("click", playGame);
   // document.getElementById("restart-game").addEventListener("click", initGame);
@@ -25,19 +27,19 @@ function displayResult(numberGuess) {
 }
 
 function getDialog(dialogType, text) {
-    let dialog;
-    switch (dialogType) {
-      case "warning":
-        dialog = "<div class='alert alert-warning' role='alert'>";
-        break;
-      case "won":
-        dialog = "<div class='alert alert-success' role='alert'>";
-        break;
-    }
-    dialog += text;
-    dialog += "</div>";
-    return dialog;
+  let dialog;
+  switch (dialogType) {
+    case "warning":
+      dialog = "<div class='alert alert-warning' role='alert'>";
+      break;
+    case "won":
+      dialog = "<div class='alert alert-success' role='alert'>";
+      break;
   }
+  dialog += text;
+  dialog += "</div>";
+  return dialog;
+}
 
 function showYouWon() {
   const text = "Awesome job, you got it!";
