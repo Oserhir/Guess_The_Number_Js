@@ -35,3 +35,9 @@ function showNumberAbove() {
   let dialog = getDialog("warning", text);
   document.getElementById("result").innerHTML = dialog;
 }
+
+function showNumberBelow() {
+  const text = "Your guess is too low!";
+  let dialog = getDialog("warning", text);
+  document.getElementById("result").innerHTML = dialog;
+}
