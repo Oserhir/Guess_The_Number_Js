@@ -14,6 +14,7 @@ let correctNumber = getRandomNumber();
 function playGame() {
   let numberGuess = document.getElementById("number-guess").value;
   displayResult(numberGuess);
+  saveGuessHistory(numberGuess);
 }
 
 function displayResult(numberGuess) {
@@ -40,6 +41,11 @@ function getDialog(dialogType, text) {
   dialog += "</div>";
   return dialog;
 }
+
+let saveGuessHistory = (guess) => {
+  guesses.push(guess);
+  return guesses;
+};
 
 function showYouWon() {
   const text = "Awesome job, you got it!";
