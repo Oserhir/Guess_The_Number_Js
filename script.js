@@ -23,3 +23,9 @@ function displayResult(numberGuess) {
     return "is correct";
   }
 }
+
+function showYouWon() {
+  const text = "Awesome job, you got it!";
+  let dialog = getDialog("won", text);
+  document.getElementById("result").innerHTML = dialog;
+}
