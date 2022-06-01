@@ -13,6 +13,7 @@ let correctNumber = getRandomNumber();
 
 function initGame() {
   correctNumber = getRandomNumber();
+  document.getElementById("number-guess").value = "";
 }
 
 function playGame() {
