@@ -1,53 +1,65 @@
-let guesses = [];
-
 window.onload = function () {
   document.getElementById("number-submit").addEventListener("click", playGame);
   document.getElementById("restart-game").addEventListener("click", initGame);
 };
 
+let guesses = [];
+
+let saveGuessHistory = (guess) => {
+  guesses.push(guess);
+  return guesses;
+};
+
+// Generate a random number 1 to 100
 let getRandomNumber = () => {
   return Math.floor(Math.random() * 101);
 };
 
 let correctNumber = getRandomNumber();
 
-function initGame() {
-  correctNumber = getRandomNumber();
-  document.getElementById("number-guess").value = "";
-  guesses = [];
-  resetResultContent();
-  resetHistoryContent();
-}
-
-function resetHistoryContent() {
-  document.getElementById("result").innerHTML = "";
-}
-
-function resetResultContent() {
-  document.getElementById("history").innerHTML = "";
-}
-
 function playGame() {
+  // Get user value from input
   let numberGuess = document.getElementById("number-guess").value;
   displayResult(numberGuess);
   saveGuessHistory(numberGuess);
   displayHistory();
 }
 
+function initGame() {
+  // Reset the correctNumber
+  correctNumber = getRandomNumber();
+  // Reset the input value
+  document.getElementById("number-guess").value = "";
+  // Reset the guesses array
+  guesses = [];
+  // Reset the guesses Result disply
+  resetResultContent();
+  // Reset the guesses History disply
+  resetHistoryContent();
+}
+
+// Reset the guesses History disply
+function resetHistoryContent() {
+  document.getElementById("result").innerHTML = "";
+}
+
+// Reset the guesses Result disply
 function resetResultContent() {
   document.getElementById("history").innerHTML = "";
 }
 
+// Check whether the guess is too high, too low, or is correct
 function displayResult(numberGuess) {
   if (numberGuess > correctNumber) {
-    return "too Hight";
+    showNumberAbove();
   } else if (numberGuess < correctNumber) {
-    return "too Low";
+    showNumberBelow();
   } else {
-    return "is correct";
+    showYouWon();
   }
 }
 
+// Display guess history to user
 function displayHistory() {
   let index = guesses.length - 1;
   let list = "<ul class='list-group'>";
@@ -58,10 +70,11 @@ function displayHistory() {
   }
 
   list += "</ul>";
-  console.log(guesses);
+
   document.getElementById("history").innerHTML = list;
 }
 
+// display the correct dialog
 function getDialog(dialogType, text) {
   let dialog;
   switch (dialogType) {
@@ -76,11 +89,6 @@ function getDialog(dialogType, text) {
   dialog += "</div>";
   return dialog;
 }
-
-let saveGuessHistory = (guess) => {
-  guesses.push(guess);
-  return guesses;
-};
 
 function showYouWon() {
   const text = "Awesome job, you got it!";
