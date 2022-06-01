@@ -2,7 +2,7 @@ let guesses = [];
 
 window.onload = function () {
   document.getElementById("number-submit").addEventListener("click", playGame);
-  // document.getElementById("restart-game").addEventListener("click", initGame);
+  document.getElementById("restart-game").addEventListener("click", initGame);
 };
 
 let getRandomNumber = () => {
@@ -11,7 +11,9 @@ let getRandomNumber = () => {
 
 let correctNumber = getRandomNumber();
 
-function initGame() {}
+function initGame() {
+  correctNumber = getRandomNumber();
+}
 
 function playGame() {
   let numberGuess = document.getElementById("number-guess").value;
