@@ -15,6 +15,11 @@ function initGame() {
   correctNumber = getRandomNumber();
   document.getElementById("number-guess").value = "";
   guesses = [];
+  resetResultContent();
+}
+
+function resetResultContent() {
+  document.getElementById("history").innerHTML = "";
 }
 
 function playGame() {
