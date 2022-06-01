@@ -14,6 +14,7 @@ let correctNumber = getRandomNumber();
 function initGame() {
   correctNumber = getRandomNumber();
   document.getElementById("number-guess").value = "";
+  guesses = [];
 }
 
 function playGame() {
