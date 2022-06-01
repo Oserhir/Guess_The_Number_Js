@@ -29,3 +29,9 @@ function showYouWon() {
   let dialog = getDialog("won", text);
   document.getElementById("result").innerHTML = dialog;
 }
+
+function showNumberAbove() {
+  const text = "Your guess is too high!";
+  let dialog = getDialog("warning", text);
+  document.getElementById("result").innerHTML = dialog;
+}
