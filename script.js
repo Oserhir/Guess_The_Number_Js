@@ -23,6 +23,10 @@ function resetResultContent() {
   document.getElementById("history").innerHTML = "";
 }
 
+function resetResultContent() {
+  document.getElementById("history").innerHTML = "";
+}
+
 function playGame() {
   let numberGuess = document.getElementById("number-guess").value;
   displayResult(numberGuess);
@@ -31,8 +35,8 @@ function playGame() {
 }
 
 function resetResultContent() {
-    document.getElementById("history").innerHTML = "";
-  }
+  document.getElementById("history").innerHTML = "";
+}
 
 function displayResult(numberGuess) {
   if (numberGuess > correctNumber) {
@@ -45,7 +49,7 @@ function displayResult(numberGuess) {
 }
 
 function displayHistory() {
-  let index = guesses.length - 1; // TODO
+  let index = guesses.length - 1;
   let list = "<ul class='list-group'>";
 
   while (index >= 0) {
