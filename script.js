@@ -16,6 +16,7 @@ function initGame() {
   document.getElementById("number-guess").value = "";
   guesses = [];
   resetResultContent();
+  resetHistoryContent();
 }
 
 function resetResultContent() {
@@ -28,6 +29,10 @@ function playGame() {
   saveGuessHistory(numberGuess);
   displayHistory();
 }
+
+function resetResultContent() {
+    document.getElementById("history").innerHTML = "";
+  }
 
 function displayResult(numberGuess) {
   if (numberGuess > correctNumber) {
