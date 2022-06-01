@@ -27,6 +27,20 @@ function displayResult(numberGuess) {
   }
 }
 
+function displayHistory() {
+  let index = guesses.length - 1; // TODO
+  let list = "<ul class='list-group'>";
+
+  while (index >= 0) {
+    list += `<li class='list-group-item'>You guessed ${guesses[index]} </li> `;
+    index--;
+  }
+
+  list += "</ul>";
+  console.log(guesses);
+  document.getElementById("history").innerHTML = list;
+}
+
 function getDialog(dialogType, text) {
   let dialog;
   switch (dialogType) {
